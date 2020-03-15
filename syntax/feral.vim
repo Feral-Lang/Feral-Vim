@@ -8,15 +8,22 @@ if exists("b:current_syntax")
 endif
 
 " Keywords
-syn keyword keywords let struct trait fn return if elif else for in while continue break nextgroup=otherKeywords
-syn keyword keywords true false nextgroup=selfKeyword
-syn keyword keywords self
+syn keyword keywords import mload let struct trait fn return if elif else for in while continue break
+syn keyword selfkeyword self
+syn keyword booleans true false
 
-" Todo
-syn keyword todos contained TODO FIXME NOTE
+" Types
+syn match types '\w\+_t'
 
-" Comments
-syn match comments '#.*$' contains=todos
+" Assignments - contains is added to give Types a higher priority
+syn match assigns '\zs\w\+\ze =[^=]' contains=types
+
+" Functions
+syn match functions '\zs\w\+\ze('
+
+" Strings
+syn region strings start="'" end="'"
+syn region strings start='"' end='"'
 
 " Numbers
 syn match numbers '\d\+'
@@ -28,15 +35,22 @@ syn match numbers '[-+]\d\+\.\d*'
 " Block
 syn region blocks start='{' end='}' fold transparent
 
-" Strings
-syn region strings start="'" end="'"
-syn region strings start='"' end='"'
+" Comments
+syn match comments '#.*$' contains=todos
 
-hi def link todos	Todo
+" Todo
+syn keyword todos contained TODO FIXME NOTE
+
+hi def link keywords	Statement
+hi def link selfkeyword	StorageClass
+hi def link types	String
+hi def link assigns	Underlined
+hi def link functions	Warning
+hi def link booleans	Boolean
+hi def link strings	Character
+hi def link numbers	Number
+hi def link blocks	Normal
 hi def link comments	Comment
-hi def link blocks	Statement
-hi def link keywords	Type
-hi def link strings	Constant
-hi def link numbers	Constant
+hi def link todos	Todo
 
 let b:current_syntax = "feral"

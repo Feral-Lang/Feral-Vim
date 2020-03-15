@@ -1,0 +1,8 @@
+# Generic files #
+#################
+.vscode/
+.clangd/
+*.swp
+
+# Feral scripts #
+*.fer
