@@ -1,0 +1,1 @@
+au BufNewFile,BufRead *.fer set filetype=feral
