@@ -13,7 +13,7 @@ syn keyword selfkeyword self
 syn keyword booleans true false
 
 " Types
-syn match types '\w\+_t'
+syn match types '\w\+_t\b'
 
 " Assignments - contains is added to give Types a higher priority
 syn match assigns '\zs\w\+\ze =[^=]' contains=types
