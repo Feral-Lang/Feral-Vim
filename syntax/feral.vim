@@ -10,6 +10,7 @@ endif
 " Keywords
 syn keyword keywords import mload let struct trait fn return if elif else for in while continue break
 syn keyword selfkeyword self
+syn keyword nil nil
 syn keyword booleans true false
 
 " Types
@@ -43,6 +44,7 @@ syn keyword todos contained TODO FIXME NOTE
 
 hi def link keywords	Statement
 hi def link selfkeyword	StorageClass
+hi def link nil		Boolean
 hi def link types	String
 hi def link assigns	Underlined
 hi def link functions	Warning
