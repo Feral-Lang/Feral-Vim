@@ -45,9 +45,9 @@ syn keyword todos contained TODO FIXME NOTE
 hi def link keywords	Statement
 hi def link selfkeyword	StorageClass
 hi def link nil		Boolean
-hi def link types	String
+hi def link types	StorageClass
 hi def link assigns	Underlined
-hi def link functions	Warning
+hi def link functions	Function
 hi def link booleans	Boolean
 hi def link strings	Character
 hi def link numbers	Number
