@@ -8,7 +8,7 @@ if exists("b:current_syntax")
 endif
 
 " Keywords
-syn keyword keywords import mload let struct trait fn return if elif else for in while continue break
+syn keyword keywords import mload let struct trait fn return if elif else for in while continue break or
 syn keyword selfkeyword self
 syn keyword nil nil
 syn keyword booleans true false
